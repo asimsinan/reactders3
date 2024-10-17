@@ -1,29 +1,11 @@
-function Liste() {
-    const yaziListesi=[
-        {
-          "baslik":"React Öğreniyorum",
-          "yazar":"Sinan",
-          "yorumSayisi":3,
-          "puan":5,
-          "id":0
-        },
-        {
-          "baslik":"Web Öğreniyorum",
-          "yazar":"Ahmet",
-          "yorumSayisi":1,
-          "puan":3,
-          "id":1
-        }
-      ];
-      
+import Yazi from "./Yazi";
+function Liste(props) {
   return (
     <>
       <ul>
-        {yaziListesi.map(function (yazi) {
+        {props.yazilar.map(function (yazi) {
           return (
-            <li key={yazi.id}>
-              {yazi.baslik + "," + yazi.yazar + "," + yazi.puan}
-            </li>
+            <Yazi key={yazi.id} {...yazi}/>
           );
         })}
       </ul>
